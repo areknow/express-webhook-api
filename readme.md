@@ -1,7 +1,7 @@
 # Express Webhook API Interface
 
 A simple Node.js interface to POST cards to a webhook connector. This is usefull for MS Teams or Slack.
-![header image](https://github.com/areknow/express-webhook-api/raw/master/screenshot.png)
+![header image](https://github.com/areknow/express-webhook-api/raw/master/example.png)
 
 ## Instructions
 
