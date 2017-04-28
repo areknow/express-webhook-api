@@ -23,3 +23,4 @@ You can then POST a request to `http://localhost:8351/api` with the following ra
 	"color": "ff0000"
 }
 ```
+`"Content-Type":"application/json"` is required.
