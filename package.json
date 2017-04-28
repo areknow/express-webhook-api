@@ -1,0 +1,21 @@
+{
+  "name": "express-webhook-api",
+  "productName": "express-webhook-api",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "repository": "user/repo",
+  "author": {
+    "name": "Arnaud P. Crowther",
+    "email": "hi@arnaud.cr",
+    "url": "http://arnaud.cr"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "node-webhooks": "^1.1.32"
+  }
+}
