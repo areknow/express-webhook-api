@@ -15,12 +15,12 @@ This will start a server at `localhost:8351`, or whatever port you choose in ind
 You can then POST a request to `http://localhost:8351/api` with the following raw JSON body:
 ```
 {
-	"connector":<YOUR CONNECTOR URL>,
-	"title": "This is the title of your card",
-	"text": "This is the body of your card",
-	"color": "ff0000",
+    "connector":<YOUR CONNECTOR URL>,
+    "title": "This is the title of your card",
+    "text": "This is the body of your card",
+    "color": "ff0000",
     "actionName": "Activate!",
-	"actionURL": "http://google.com"
+    "actionURL": "http://google.com"
 }
 ```
 Notes:
