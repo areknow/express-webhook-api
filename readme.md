@@ -18,7 +18,11 @@ You can then POST a request to `http://localhost:8351/api` with the following ra
 	"connector":<YOUR CONNECTOR URL>,
 	"title": "This is the title of your card",
 	"text": "This is the body of your card",
-	"color": "ff0000"
+	"color": "ff0000",
+    "actionName": "Activate!",
+	"actionURL": "http://google.com"
 }
 ```
-`"Content-Type":"application/json"` is required.
+Notes:
+- `actionName` and `actionURL` are not required, omitting them will prevent an action button from being created.
+- `"Content-Type":"application/json"` is required.

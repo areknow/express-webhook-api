@@ -24,24 +24,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // post route to handle the API call and build the webhook 
 app.post('/api', function(req, res){
-  var color = "16161d"
   var connector = req.body.connector;
   var title = req.body.title;
   var text = req.body.text;
+  var color = "16161d"; color = req.body.color;
   var actionName = req.body.actionName;
   var actionURL = req.body.actionURL;
-  color = req.body.color;
+  var potentialAction
+  //check to see if an action button is requested
+  if (req.body.actionName) {
+    potentialAction = [{
+      "@context": "https://schema.org", 
+      "@type": "ViewAction", 
+      "name": actionName, 
+      "target": [actionURL]
+    }]
+  } else {
+    potentialAction = null;
+  }
+  //trigger the webhook
   webHooks.trigger('webhook', {
     "title": title, 
     "text": text, 
     "themeColor": color,
-        "potentialAction": [{
-        "@context": "https://schema.org", 
-        "@type": "ViewAction", 
-        "name": "Open Action", 
-        "target": ["http://localhost:"+port]
-    }]
+    "potentialAction": potentialAction
   });
+  //initialize the webhook callback
   webHooks.add('webhook', connector).then(function(){
     res.send('webhook success');
   }).catch(function(err){
