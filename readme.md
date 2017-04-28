@@ -26,3 +26,9 @@ You can then POST a request to `http://localhost:8351/api` with the following ra
 Notes:
 - `actionName` and `actionURL` are not required, omitting them will prevent an action button from being created.
 - `"Content-Type":"application/json"` is required.
+
+
+## Dependencies
+- "body-parser" ^1.17.1
+- "express" ^4.15.2
+- "node-webhooks" ^1.1.32
