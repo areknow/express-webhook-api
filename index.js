@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 // post route to handle the API call and build the webhook 
-app.post('/api', function(req, res){
+app.post('/notify', function(req, res){
   var connector = req.body.connector;
   var title = req.body.title;
   var text = req.body.text;
