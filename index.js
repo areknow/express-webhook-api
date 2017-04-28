@@ -28,6 +28,8 @@ app.post('/api', function(req, res){
   var connector = req.body.connector;
   var title = req.body.title;
   var text = req.body.text;
+  var actionName = req.body.actionName;
+  var actionURL = req.body.actionURL;
   color = req.body.color;
   webHooks.trigger('webhook', {
     "title": title, 
@@ -41,44 +43,8 @@ app.post('/api', function(req, res){
     }]
   });
   webHooks.add('webhook', connector).then(function(){
-    res.send('webhook success')
+    res.send('webhook success');
   }).catch(function(err){
-    res.send(err)
+    res.send(err);
   });
 });
-
-
-
-
-
-
-
-
-
-// Initialize WebHooks module. 
-
-
-// json file that store webhook URLs 
-
-
-//define the webhook url
-// var url = 'https://outlook.office.com/webhook/9a13f911-e1f1-4f6a-868b-def0c81f3a4e@70ebe3a3-5b30-435d-9d67-7716d74ca190/IncomingWebhook/e5cefb5c639943aab4c7ba8046459c4e/d609a152-1ff6-41f5-a3c7-e5a1db19636e';
- 
-// sync instantation - add a new webhooks
-
-
-//set up the webhook triggers
-
-
-//set up the webhook advanced
-// webHooks.trigger('webhook', {
-//     "title": "Learn about Office 365 Connectors", 
-//     "text": "Visit the [Outlook Dev Portal](https://dev.outlook.com) to learn more about Office 365 Connectors!", 
-//     "themeColor": "EA4300", 
-    // "potentialAction": [{
-    //     "@context": "https://schema.org", 
-    //     "@type": "ViewAction", 
-    //     "name": "Open Outlook Dev Center", 
-    //     "target": ["https://dev.outlook.com"]
-    // }]
-// });
